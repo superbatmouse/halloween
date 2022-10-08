@@ -1,0 +1,16 @@
+:root {
+    // Обёртка контента
+    --wrapper-gap: #{rem(40)};
+    --wrapper-width: #{rem(1240)};
+
+    // Размеры шрифтов
+    --h1-fs: #{rem(72)};
+    --h2-fs: #{rem(56)};
+    --large-text-fs: #{rem(28)};
+    --text-fs: #{rem(24)};
+    --small-text-fs: #{rem(18)};
+
+    // Анимации
+    --delay: 0s;
+    --speed: 3.5s;
+}

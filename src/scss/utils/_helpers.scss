@@ -1,0 +1,113 @@
+.wrapper {
+    max-width: calc(var(--wrapper-width) + var(--wrapper-gap) * 2);
+    padding: 0 var(--wrapper-gap);
+    margin: 0 auto;
+}
+
+.transition-lock {
+    * {
+        transition: none !important;
+    }
+}
+
+.inline-link {
+    transition: color 0.3s ease;
+    color: var(--dark-purple-color);
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+    &:active {
+        opacity: 0.8;
+    }
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.menu-link {
+    color: #3e3e3e;
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: #2b2b2b;
+        text-decoration: none;
+    }
+}
+
+.link {
+    font-size: var(--large-text-fs);
+    line-height: 1.4;
+}
+
+.scroll-lock {
+    overflow: hidden;
+}
+
+.observed {
+    visibility: hidden;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.path-bg {
+    opacity: 0;
+}
+
+.dash {
+    path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash var(--speed) linear var(--delay) forwards;
+    }
+
+    path.path-bg {
+        transition: opacity 0.3s ease 2.5s;
+
+        opacity: 1;
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s linear var(--delay) forwards;
+}
+
+.back-in-left {
+    animation: backInLeft 1.5s linear var(--delay) forwards;
+}
+
+.scale-x {
+    animation: scale-x 1.5s linear var(--delay) forwards;
+}
+
+.appear {
+    animation: appear var(--speed) linear var(--delay) forwards;
+}
+
+.zoom-in {
+    animation: zoom-in var(--speed) linear var(--delay) forwards;
+}
+
+.hidden {
+    position: absolute;
+    pointer-events: none;
+    // visibility: hidden;
+    opacity: 0;
+}
+
+@include media("md", "min") {
+    .show-for-md {
+        display: none;
+    }
+}
+
+@include media("md") {
+    .hide-for-md {
+        display: none;
+    }
+}

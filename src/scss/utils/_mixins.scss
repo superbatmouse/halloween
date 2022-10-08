@@ -1,0 +1,38 @@
+$sizes: (
+    "lg": 1239.98px,
+    "md": 959.98px,
+    "sm": 766.98px,
+    "xxs": 599.98px,
+    "xs": 399.98px,
+);
+
+@mixin media($size, $range: "max") {
+    @if map-has-key($sizes, $size) {
+        $size-value: map-get($sizes, $size);
+        @media only screen and (#{$range}-width: $size-value) {
+            @content;
+        }
+    } @else {
+        @media only screen and (#{$range}-width: #{$size}px) {
+            @content;
+        }
+    }
+}
+
+@mixin inset($gap: 0px) {
+    right: $gap;
+    left: $gap;
+    bottom: $gap;
+    top: $gap;
+}
+
+@mixin circle($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+}
+
+@function rem($size) {
+    $remSize: $size / 16;
+    @return #{$remSize}rem;
+}
