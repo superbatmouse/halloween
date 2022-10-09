@@ -1,6 +1,4 @@
-import "swiper/css";
 import "../scss/style.scss";
-import Swiper, { Pagination } from "swiper";
 
 function lockScroll(needToLock = true) {
   if (needToLock) {
@@ -53,16 +51,14 @@ function animateItems(classToWatch, customSettings = null) {
       if (entry.isIntersecting) {
         const el = entry.target;
         const classToSet = el.dataset.class;
-        if (classToSet) {
-          el.classList.add(classToSet);
-        }
+
+        el.classList.add(classToSet ?? "reached");
+
         el.classList.remove(classToWatch.substring(1));
         observer.unobserve(el);
       }
     });
   };
-
-  let once;
 
   let observer = new IntersectionObserver(callback, options);
 
@@ -75,32 +71,7 @@ function animateItems(classToWatch, customSettings = null) {
   }
 }
 
-let slider = null;
-
-// function createSliderForMobile(e) {
-//   if (e && e.matches) {
-//     slider = new Swiper(".swiper", {
-//       modules: [Pagination],
-//       pagination: {
-//         el: ".swiper-pagination",
-//         clickable: true,
-//       },
-//       spaceBetween: 16,
-//       slidesPerView: "auto",
-//     });
-//   } else if (slider) {
-//     slider.destroy(true, true);
-//   }
-// }
-
 window.onload = () => {
   document.body.classList.remove("transition-lock");
-
   animateItems(".observed");
-
-  // const media = window.matchMedia("(max-width: 1023.5px)");
-  // if (media.matches) {
-  //   createSliderForMobile(media);
-  // }
-  // media.addEventListener("change", createSliderForMobile);
 };

@@ -1,0 +1,27 @@
+.button {
+    font-size: var(--text-fs);
+    font-weight: bold;
+    padding: rem(19);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+    background-color: var(--orange-color);
+    text-transform: uppercase;
+    border-radius: rem(28);
+    box-shadow: rem(4) rem(4) rem(4) rgba(40, 37, 36, 0.4);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    min-width: rem(387);
+    width: max-content;
+
+    @media (hover: hover) {
+        &:hover {
+            box-shadow: 0px 0px rem(16) rem(4) var(--light-orange-color);
+        }
+    }
+
+    &:active {
+        box-shadow: none;
+        background-color: #bb4411;
+    }
+}

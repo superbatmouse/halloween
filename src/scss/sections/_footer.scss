@@ -1,0 +1,62 @@
+.footer {
+    padding-block: rem(63) rem(80);
+    background-color: var(--dark-purple-color);
+    position: relative;
+
+    &__logo {
+        margin-bottom: rem(45);
+        transition: filter 0.2s ease;
+        display: inline-block;
+        @media (hover: hover) {
+            &:hover {
+                filter: brightness(2);
+            }
+        }
+    }
+
+    &__content {
+        display: grid;
+        gap: rem(20);
+        grid-template-columns: 3fr 5fr 4fr;
+    }
+
+    &__nav {
+        text-transform: uppercase;
+        font-family: "Merriweather", serif;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__nav-link {
+        & + & {
+            margin-top: rem(28);
+        }
+    }
+
+    &__participant {
+        color: rgba(#dfdcd3, 0.7);
+        font-size: var(--small-text-fs);
+        & + & {
+            margin-top: 1em;
+        }
+        a {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__cow {
+        img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: rem(20);
+    }
+}

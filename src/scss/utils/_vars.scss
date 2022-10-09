@@ -4,13 +4,33 @@
     --wrapper-width: #{rem(1240)};
 
     // Размеры шрифтов
-    --h1-fs: #{rem(72)};
-    --h2-fs: #{rem(56)};
-    --large-text-fs: #{rem(28)};
-    --text-fs: #{rem(24)};
-    --small-text-fs: #{rem(18)};
+    --h1-fs: #{rem(104)};
+    --h2-fs: #{rem(44)};
+    --h3-fs: #{rem(36)};
+    --text-fs: #{rem(18)};
+    --small-text-fs: #{rem(14)};
+    // --h1-fs: #{rem(52)};
+    // --h2-fs: #{rem(22)};
+    // --h3-fs: #{rem(18)};
+    // --text-fs: #{rem(16)};
+    // --small-text-fs: #{rem(14)};
 
     // Анимации
     --delay: 0s;
     --speed: 3.5s;
+
+    // Цвета
+    --black-color: #282524;
+    --gray-color: #9f928d;
+    --light-gray-color: #dfdcd3;
+    --dark-purple-color: #7b1662;
+    --purple-color: #bb128c;
+    --brown-color: #874943;
+    --orange-color: #d2521b;
+    --light-orange-color: #ffad32;
+    --latte-color: #e0b588;
+    --beige-color: #cbb196;
+
+    // Переменные-хелперы
+    --header-top-shift: 64px;
 }

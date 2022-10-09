@@ -1,0 +1,18 @@
+.sponsor {
+    padding-block: rem(160) rem(200);
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    &__text {
+        flex-basis: calc(100% / 12 * 5);
+    }
+
+    &__products {
+        flex-basis: calc(50% - 20px);
+    }
+}

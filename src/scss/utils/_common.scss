@@ -18,6 +18,9 @@ html {
 body {
     font-size: var(--text-fs);
     line-height: 1.4;
+    font-family: "Lato", sans-serif;
+    background-color: var(--black-color);
+    color: var(--light-gray-color);
 }
 
 a {
@@ -76,12 +79,23 @@ label {
 
 h1 {
     font-size: var(--h1-fs);
+    font-family: "WonderNight";
+    letter-spacing: 0.04em;
 }
 
 h2 {
     font-size: var(--h2-fs);
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.04em;
+    margin-bottom: rem(32);
 }
 
 h3 {
+    font-family: "Merriweather", serif;
     font-size: var(--h3-fs);
+}
+
+h4 {
+    font-family: "Merriweather", serif;
+    font-size: var(--text-fs);
 }

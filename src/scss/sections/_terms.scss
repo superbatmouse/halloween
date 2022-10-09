@@ -1,0 +1,57 @@
+.terms {
+    padding-bottom: rem(160);
+
+    &__header {
+        text-align: center;
+        margin-bottom: rem(70);
+    }
+
+    &__desc {
+        margin-bottom: rem(8);
+    }
+
+    &__title {
+        margin-bottom: rem(32);
+        text-shadow: 3px 3px 0px var(--dark-purple-color);
+    }
+
+    &__button {
+        margin-inline: auto;
+        margin-top: rem(48);
+        width: max-content;
+        display: block;
+        text-align: center;
+    }
+}
+
+.scroll {
+    max-width: rem(590);
+    margin-inline: auto;
+    background-image: url(./../images/scroll.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-block: rem(150) rem(190);
+    color: var(--black-color);
+    padding-inline: rem(64);
+    position: relative;
+
+    &__title {
+        text-align: center;
+        margin-bottom: rem(56);
+        text-transform: uppercase;
+    }
+
+    &__rule {
+        font-size: rem(24);
+        & + & {
+            margin-top: rem(8);
+        }
+    }
+
+    &__spoon {
+        position: absolute;
+        bottom: rem(20);
+        right: 0;
+        transform: translateX(205px);
+    }
+}

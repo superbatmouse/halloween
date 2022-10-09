@@ -1,0 +1,16 @@
+.header {
+    position: absolute;
+    top: var(--header-top-shift);
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+}

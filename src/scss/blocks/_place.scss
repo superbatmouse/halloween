@@ -1,0 +1,15 @@
+.place {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(8);
+    &__sum {
+        padding: rem(8) rem(16);
+        color: var(--dark-purple-color);
+        font-weight: bold;
+        font-size: rem(32);
+        background-color: var(--light-orange-color);
+        border-radius: rem(100);
+    }
+}

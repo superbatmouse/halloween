@@ -1,0 +1,22 @@
+.hi-label {
+    padding: rem(8.5) rem(38);
+    color: var(--black-color);
+    background: rgba(223, 220, 211, 0.45);
+    border-radius: rem(28);
+    display: inline-flex;
+    align-items: center;
+    gap: rem(18);
+    font-size: rem(20);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: rgba(223, 220, 211, 0.8);
+        }
+    }
+
+    &:active {
+        background-color: rgba(181, 179, 173, 0.8);
+    }
+}

@@ -1,0 +1,32 @@
+.prizes {
+    background-color: var(--dark-purple-color);
+    text-align: center;
+
+    &__wrapper {
+        padding-block: rem(160);
+        position: relative;
+    }
+
+    &__places {
+        display: flex;
+        gap: rem(20);
+        justify-content: center;
+    }
+
+    &__title {
+        margin-bottom: rem(32);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 0px var(--black-color);
+    }
+
+    &__desc {
+        margin-bottom: rem(64);
+    }
+
+    &__cow {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}

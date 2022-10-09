@@ -1,0 +1,12 @@
+
+mixin place(num)
+  -
+    var places = [
+      {img: "./images/1-place.svg", text: '1 место', reward: '3000₽'},
+      {img: "./images/2-place.svg", text: '2 место', reward: '2000₽'},
+      {img: "./images/3-place.svg", text: '3 место', reward: '1000₽'},
+    ]
+  article.place
+    img(src=`${places[num - 1].img}`, alt=`Кубок за ${places[num - 1].img}`)
+    p= places[num - 1].text
+    span.place__sum= places[num - 1].reward

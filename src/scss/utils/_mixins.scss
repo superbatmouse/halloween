@@ -36,3 +36,26 @@ $sizes: (
     $remSize: $size / 16;
     @return #{$remSize}rem;
 }
+
+@mixin underline {
+    @media (hover: hover) {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            height: rem(2);
+            background-color: currentColor;
+            transition: transform 0.3s ease;
+            transform: scaleX(0);
+            transform-origin: 50%;
+            left: 0;
+            right: 0;
+            bottom: rem(-2);
+            border-radius: rem(1);
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+}
