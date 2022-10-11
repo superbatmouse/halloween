@@ -97,7 +97,7 @@ window.onload = () => {
   animateItems(".observed");
 
   const { hash, pathname } = window.location;
-  if (["/receipt.html", "/receipt"].includes(pathname)) {
+  if ("/receipt.html".includes(pathname) || "/receipt".includes(pathname)) {
     loadReceipt(hash);
 
     window.addEventListener("hashchange", (event) => {
