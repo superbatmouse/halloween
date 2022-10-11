@@ -2,7 +2,7 @@ export default [
   {
     id: 1,
     title: "Печенье-картошка в виде пауков",
-    image: "/images/mock/receipt-big.webp",
+    image: "./images/mock/receipt-big.webp",
     author: "NIMBUS2000",
     ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
     steps: [
@@ -14,7 +14,7 @@ export default [
   {
     id: 2,
     title: "Пиццы в виде мумий",
-    image: "/images/mock/2.webp",
+    image: "./images/mock/2.webp",
     author: "Sirius Black",
     ingredients: [
       "Гречка зелёная 1/2 стак",
@@ -33,7 +33,7 @@ export default [
   {
     id: 3,
     title: "Печенье-картошка в виде пауков",
-    image: "/images/mock/receipt-big.webp",
+    image: "./images/mock/receipt-big.webp",
     author: "Just Noname",
     ingredients: [
       "Гречка зелёная 1/2 стак",
