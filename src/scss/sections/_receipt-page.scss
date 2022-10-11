@@ -1,0 +1,73 @@
+.receipt-page {
+    &__content {
+        padding-top: calc(var(--from-header-top-shift) + #{rem(60)});
+        padding-bottom: rem(160);
+    }
+
+    &__arrow {
+        margin-bottom: rem(80);
+    }
+
+    &__image-container {
+        height: 0;
+        padding-top: 87.1%;
+        position: relative;
+    }
+
+    &__image {
+        box-shadow: 6px 4px 12px rgba(210, 82, 27, 0.7);
+        border-radius: rem(20);
+        position: absolute;
+        @include inset;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__main-info {
+        display: grid;
+        grid-template-columns: minmax(300px, 1fr) 1fr;
+        gap: rem(20);
+        margin-bottom: rem(80);
+    }
+
+    &__title {
+        margin-bottom: rem(16);
+        color: var(--light-orange-color);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        line-height: 1.25;
+        font-family: "Merriweather";
+    }
+
+    &__author {
+        font-size: rem(20);
+        margin-bottom: rem(12);
+    }
+
+    &__year {
+        margin-bottom: rem(48);
+    }
+
+    &__button {
+        margin-bottom: rem(20);
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        margin-bottom: rem(32);
+    }
+}

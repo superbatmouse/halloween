@@ -71,6 +71,24 @@
     @include underline;
 }
 
+.list {
+    margin-left: 1rem;
+
+    &--unordered {
+        list-style-type: disc;
+    }
+    &--ordered {
+        list-style-type: decimal;
+    }
+    li + li {
+        margin-top: rem(12);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
 @include media("md", "min") {
     .show-for-md {
         display: none;

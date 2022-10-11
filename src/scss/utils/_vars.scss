@@ -32,5 +32,6 @@
     --beige-color: #cbb196;
 
     // Переменные-хелперы
-    --header-top-shift: 64px;
+    --header-top-shift: #{rem(64)};
+    --from-header-top-shift: calc(var(--header-top-shift) + #{rem(18)} * 1.2);
 }

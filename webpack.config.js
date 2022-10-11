@@ -65,7 +65,6 @@ module.exports = function (_, argv) {
           test: /\.pug$/,
           use: ["raw-loader", "pug-html-loader"],
         },
-
         {
           type: "javascript/auto",
           test: /\.(jpe?g|png|gif|svg)$/i,

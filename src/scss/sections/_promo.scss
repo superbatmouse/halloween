@@ -19,8 +19,8 @@
         text-align: center;
         min-height: clamp(rem(670), 100vh, rem(1024));
 
-        padding-top: calc(var(--header-top-shift) + #{rem(18)} * 1.2);
-        padding-bottom: calc((var(--header-top-shift) + #{rem(18)} * 1.2) * 2);
+        padding-top: var(--from-header-top-shift);
+        padding-bottom: calc(var(--from-header-top-shift) * 2);
     }
 
     &__subtitle {
