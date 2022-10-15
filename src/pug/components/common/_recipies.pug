@@ -1,11 +1,3 @@
--
-  var recipies = [
-    {img: './images/mock/1.webp', category: 'закуска', name: 'Фаршированные перцы в виде тыквы Джек и очень длинная приписка', link: '#'},
-    {img: './images/mock/2.webp', category: 'закуска', name: 'Мини-пиццы Мумии', link: '#'},
-    {img: './images/mock/1.webp', category: 'закуска', name: 'Фаршированные перцы в виде тыквы Джек', link: '#'},
-    {img: './images/mock/3.webp', category: 'закуска', name: 'Печенье Пауки', link: '#'},
-  ]
-
 section.recipies
   .wrapper
     header.recipies__header
@@ -16,7 +8,4 @@ section.recipies
         br
         | Ниже вы узнаете, как податься на&nbsp;участие.
 
-    .recipies__items
-      each val in [1,2,3,4]
-        each item in recipies
-          +receipt(item)
+    .recipies__items#receipt-items

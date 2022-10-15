@@ -18,8 +18,6 @@ function loadReceipt(hash) {
     (item) => item.id === Number(hash.replace("#", ""))
   );
 
-  console.log(hash);
-
   const warnText = document.querySelector("#receipt-not-found");
   const receiptHTML = document.querySelector("#receipt");
   if (!receipt) {
@@ -45,6 +43,7 @@ function setPageData(data) {
   image.setAttribute("src", data.image);
   title.textContent = data.title;
   author.textContent = data.author;
+  author.href = data.authorLink;
   description.textContent = data.description;
   ingredients.innerHTML = "";
   steps.innerHTML = "";
@@ -58,6 +57,29 @@ function setPageData(data) {
     li.textContent = step;
     steps.appendChild(li);
   });
+}
+
+function renderReceiptCards() {
+  const receiptItems = document.querySelector("#receipt-items");
+  if (!receiptItems) return;
+  const items = [];
+  receipts.forEach((receipt) => {
+    const content = `
+      <div class="receipt__image">
+        <img src="${receipt.image}" alt="Фото рецепта">
+      </div>
+      <div class="receipt__content">
+          <p class="receipt__category">${receipt.category}</p>
+          <p class="receipt__name">${receipt.title}</p>
+          <a href="/receipt.html#${receipt.id}" class="receipt__link" title="Перейти на страницу рецепта: ${receipt.title}"></a>
+      </div>
+      `;
+    const template = document.createElement("article");
+    template.classList = "receipt";
+    template.innerHTML = content;
+    items.push(template);
+  });
+  receiptItems.append(...items);
 }
 
 function animateItems(classToWatch, customSettings = null) {
@@ -106,6 +128,8 @@ window.onload = () => {
       loadReceipt(newHash);
     });
   }
+
+  renderReceiptCards();
 };
 
 // function handleBurgerMenuLogic() {

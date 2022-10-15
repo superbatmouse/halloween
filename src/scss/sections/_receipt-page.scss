@@ -45,9 +45,14 @@
     &__author {
         font-size: rem(20);
         margin-bottom: rem(12);
-        span {
+
+        a {
             text-decoration: underline;
             text-underline-offset: rem(3);
+            &[href=""] {
+                pointer-events: none;
+                text-decoration: none;
+            }
         }
     }
 
