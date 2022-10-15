@@ -156,7 +156,16 @@ module.exports = function (_, argv) {
       new MiniCssExtractPlugin({
         filename: "./css/style.[contenthash].css",
       }),
-      new ImageminWebpWebpackPlugin(),
+      new ImageminWebpWebpackPlugin({
+        config: [
+          {
+            test: /\.(jpe?g|png)/,
+            options: {
+              quality: 85,
+            },
+          },
+        ],
+      }),
       new CopyPlugin({
         patterns: [
           { from: "src/images", to: "./images", noErrorOnMissing: true },

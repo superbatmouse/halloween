@@ -34,18 +34,18 @@ function loadReceipt(hash) {
   setPageData(receipt);
 }
 
-function clearContent() {}
-
 function setPageData(data) {
   const image = document.querySelector("#receipt-image");
   const title = document.querySelector("#receipt-title");
   const author = document.querySelector("#receipt-author");
   const ingredients = document.querySelector("#receipt-ingredients");
   const steps = document.querySelector("#receipt-steps");
+  const description = document.querySelector("#receipt-description");
 
   image.setAttribute("src", data.image);
   title.textContent = data.title;
   author.textContent = data.author;
+  description.textContent = data.description;
   ingredients.innerHTML = "";
   steps.innerHTML = "";
   data.ingredients.forEach((ingredient) => {

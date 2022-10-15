@@ -11,8 +11,8 @@
     border-radius: rem(28);
     box-shadow: rem(4) rem(4) rem(4) rgba(40, 37, 36, 0.4);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
-    min-width: rem(387);
-    width: max-content;
+    max-width: rem(387);
+    width: 100%;
 
     @media (hover: hover) {
         &:hover {

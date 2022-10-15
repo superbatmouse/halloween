@@ -1,4 +1,6 @@
 .receipt-page {
+    --content-gap: #{rem(40)};
+
     &__content {
         padding-top: calc(var(--from-header-top-shift) + #{rem(60)});
         padding-bottom: rem(160);
@@ -27,7 +29,7 @@
     &__main-info {
         display: grid;
         grid-template-columns: minmax(300px, 1fr) 1fr;
-        gap: rem(20);
+        gap: var(--content-gap);
         margin-bottom: rem(80);
     }
 
@@ -43,14 +45,24 @@
     &__author {
         font-size: rem(20);
         margin-bottom: rem(12);
+        span {
+            text-decoration: underline;
+            text-underline-offset: rem(3);
+        }
     }
 
     &__year {
-        margin-bottom: rem(48);
+        margin-bottom: rem(32);
+        font-size: rem(14);
+        color: rgba(223, 220, 211, 0.7);
     }
 
-    &__button {
-        margin-bottom: rem(20);
+    &__description {
+        margin-bottom: rem(56);
+        &:empty {
+            padding-bottom: rem(24);
+            margin-bottom: 0;
+        }
     }
 
     &__info {
@@ -63,11 +75,89 @@
     &__details {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 20px;
+        grid-gap: var(--content-gap);
     }
 
     &__subtitle {
         text-transform: uppercase;
         margin-bottom: rem(32);
+    }
+
+    @include media("md") {
+        &__arrow {
+            margin-bottom: rem(36);
+        }
+
+        &__year {
+            margin-bottom: rem(16);
+        }
+
+        &__description {
+            margin-bottom: rem(48);
+            &:empty {
+                padding-bottom: rem(32);
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @include media("sm") {
+        &__content {
+            padding-bottom: rem(80);
+        }
+
+        &__title {
+            order: -1;
+            margin-bottom: rem(28);
+        }
+
+        &__main-info {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        &__image-container {
+            margin-bottom: rem(16);
+        }
+
+        &__author {
+            margin-bottom: rem(4);
+            font-size: var(--text-fs);
+        }
+
+        &__year {
+            margin-bottom: rem(28);
+        }
+
+        &__description {
+            margin-bottom: rem(36);
+        }
+
+        &__button {
+            max-width: none;
+        }
+
+        &__details {
+            grid-template-columns: 1fr;
+            grid-gap: rem(44);
+        }
+
+        &__info {
+            display: contents;
+            & > * {
+                display: contents;
+            }
+        }
+
+        &__image-container {
+            height: 0;
+            padding-top: 100%;
+            position: relative;
+        }
+
+        &__image {
+            box-shadow: none;
+            border-radius: rem(10);
+        }
     }
 }

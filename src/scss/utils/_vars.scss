@@ -9,11 +9,6 @@
     --h3-fs: #{rem(36)};
     --text-fs: #{rem(18)};
     --small-text-fs: #{rem(14)};
-    // --h1-fs: #{rem(52)};
-    // --h2-fs: #{rem(22)};
-    // --h3-fs: #{rem(18)};
-    // --text-fs: #{rem(16)};
-    // --small-text-fs: #{rem(14)};
 
     // Анимации
     --delay: 0s;
@@ -34,4 +29,18 @@
     // Переменные-хелперы
     --header-top-shift: #{rem(64)};
     --from-header-top-shift: calc(var(--header-top-shift) + #{rem(18)} * 1.2);
+
+    @include media("md") {
+        --h1-fs: #{rem(72)};
+        --h2-fs: #{rem(36)};
+        --h3-fs: #{rem(24)};
+        --text-fs: #{rem(16)};
+    }
+
+    @include media("sm") {
+        --wrapper-gap: #{rem(16)};
+        --h1-fs: #{rem(52)};
+        --h2-fs: #{rem(22)};
+        --h3-fs: #{rem(18)};
+    }
 }

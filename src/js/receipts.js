@@ -4,6 +4,8 @@ export default [
     title: "Печенье-картошка в виде пауков",
     image: "./images/mock/receipt-big.webp",
     author: "NIMBUS2000",
+    description:
+      "Говорят, тощих людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
     ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
     steps: [
       "Зелёную гречку помыть и замочить минимумна 2 часа, но лучше на ночь.",
@@ -16,6 +18,7 @@ export default [
     title: "Пиццы в виде мумий",
     image: "./images/mock/2.webp",
     author: "Sirius Black",
+    description: "",
     ingredients: [
       "Гречка зелёная 1/2 стак",
       "Яблоко 1 шт",
@@ -35,6 +38,7 @@ export default [
     title: "Печенье-картошка в виде пауков",
     image: "./images/mock/receipt-big.webp",
     author: "Just Noname",
+    description: "",
     ingredients: [
       "Гречка зелёная 1/2 стак",
       "Яблоко 1 шт",
