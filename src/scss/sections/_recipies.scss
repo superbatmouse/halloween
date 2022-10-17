@@ -21,4 +21,25 @@
         grid-template-columns: repeat(4, 1fr);
         gap: rem(20);
     }
+
+    @include media("md") {
+        margin-bottom: rem(120);
+        &__items {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @include media("sm") {
+        margin-bottom: rem(80);
+        &__items {
+            gap: rem(12);
+        }
+    }
+
+    @include media(500) {
+        &__items {
+            gap: rem(12);
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
