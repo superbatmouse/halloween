@@ -29,4 +29,10 @@
         right: 0;
         bottom: 0;
     }
+
+    @include media("lg") {
+        &__cow {
+            width: rem(180);
+        }
+    }
 }
