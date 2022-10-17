@@ -15,4 +15,18 @@
     &__products {
         flex-basis: calc(50% - 20px);
     }
+
+    @include media("md") {
+        padding-block: rem(140);
+    }
+    @include media("sm") {
+        padding-block: rem(80);
+        &__content {
+            flex-direction: column;
+            gap: rem(48);
+        }
+        &__products {
+            max-width: rem(500);
+        }
+    }
 }
