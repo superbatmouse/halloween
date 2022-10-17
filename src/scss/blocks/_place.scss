@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     gap: rem(8);
+    color: var(--latte-color);
     &__sum {
         padding: rem(8) rem(16);
         color: var(--dark-purple-color);
@@ -11,5 +12,26 @@
         font-size: rem(32);
         background-color: var(--light-orange-color);
         border-radius: rem(100);
+    }
+
+    @include media("md") {
+        img {
+            width: rem(118);
+        }
+        &__sum {
+            font-size: rem(24);
+        }
+    }
+
+    @include media("sm") {
+        gap: rem(6);
+        font-size: rem(12);
+        &__sum {
+            font-size: rem(16);
+            padding: rem(4) rem(12);
+        }
+        img {
+            width: rem(106);
+        }
     }
 }

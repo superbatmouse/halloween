@@ -21,6 +21,9 @@
         display: block;
         text-align: center;
     }
+
+    @include media("md") {
+    }
 }
 
 .scroll {
