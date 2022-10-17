@@ -59,4 +59,47 @@
     &__subtitle {
         margin-bottom: rem(20);
     }
+
+    @include media("md") {
+        &__logo {
+            width: rem(72);
+        }
+        &__cow {
+            img {
+                position: absolute;
+                top: rem(84);
+                transform: none;
+            }
+        }
+    }
+
+    @include media("sm") {
+        padding-block: rem(40) rem(50);
+        &__content {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+        &__logo {
+            width: rem(59);
+        }
+
+        &__nav {
+            margin-bottom: rem(63);
+        }
+
+        &__nav-link {
+            text-decoration: underline;
+            & + & {
+                margin-top: rem(20);
+            }
+        }
+
+        &__cow {
+            img {
+                width: rem(106);
+                top: rem(65);
+                right: var(--wrapper-gap);
+            }
+        }
+    }
 }

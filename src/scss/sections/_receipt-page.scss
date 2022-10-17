@@ -107,6 +107,18 @@
     }
 
     @include media("sm") {
+        &__arrow {
+            top: var(--header-top-shift);
+            position: absolute;
+            font-size: rem(14);
+            z-index: 1000;
+            a {
+                height: var(--header-content-height);
+            }
+            img {
+                height: rem(22);
+            }
+        }
         &__content {
             padding-bottom: rem(80);
         }

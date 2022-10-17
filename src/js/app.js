@@ -6,8 +6,10 @@ function lockScroll(needToLock = true) {
     const scrollbarWidth =
       window.innerWidth - document.documentElement.clientWidth;
     document.body.style.paddingRight = `${scrollbarWidth}px`;
+    document.body.style.position = "fixed";
   } else {
     document.body.style.removeProperty("padding-right");
+    document.body.style.removeProperty("position");
   }
 
   document.body.classList[needToLock ? "add" : "remove"]("scroll-lock");
@@ -32,6 +34,47 @@ function loadReceipt(hash) {
   setPageData(receipt);
 }
 
+function setCauldronTextPosition() {
+  const text = document.querySelector(".promo__text");
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    text.style = "";
+    return;
+  }
+  const cauldron = document.querySelector(".cauldron-wrapper");
+  const cRect = cauldron.getBoundingClientRect();
+  const tRect = text.getBoundingClientRect();
+  text.style.top =
+    cRect.top + window.pageYOffset + cRect.height / 2 - tRect.height / 2 + "px";
+  text.style.maxWidth = cRect.width - 80 + "px";
+  text.classList.add("promo__text--visible");
+}
+
+function handleBurgerMenuLogic() {
+  const $burger = document.querySelector("#burger-trigger");
+  const $menu = document.querySelector("#mobile-menu");
+  // const $menuCloser = document.querySelector("#menu-closer");
+
+  if ($burger && $menu) {
+    $burger.addEventListener("click", function () {
+      $menu.classList.toggle("active");
+      // $menuCloser.setAttribute("aria-hidden", "false");
+      lockScroll();
+    });
+
+    const closeMenu = () => {
+      // $menuCloser.setAttribute("aria-hidden", "true");
+      $burger.classList.remove("active");
+      $menu.classList.remove("active");
+      lockScroll(false);
+    };
+
+    // $menuCloser.addEventListener("click", closeMenu);
+
+    $menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+}
 function setPageData(data) {
   const image = document.querySelector("#receipt-image");
   const title = document.querySelector("#receipt-title");
@@ -65,15 +108,15 @@ function renderReceiptCards() {
   const items = [];
   receipts.forEach((receipt) => {
     const content = `
-      <div class="receipt__image">
-        <img src="${receipt.image}" alt="Фото рецепта">
-      </div>
-      <div class="receipt__content">
-          <p class="receipt__category">${receipt.category}</p>
-          <p class="receipt__name">${receipt.title}</p>
-          <a href="/receipt.html#${receipt.id}" class="receipt__link" title="Перейти на страницу рецепта: ${receipt.title}"></a>
-      </div>
-      `;
+    <div class="receipt__image">
+      <img src="${receipt.image}" alt="Фото рецепта">
+    </div>
+    <div class="receipt__content">
+        <p class="receipt__category">${receipt.category}</p>
+        <p class="receipt__name">${receipt.title}</p>
+        <a href="/receipt.html#${receipt.id}" class="receipt__link" title="Перейти на страницу рецепта: ${receipt.title}"></a>
+    </div>
+    `;
     const template = document.createElement("article");
     template.classList = "receipt";
     template.innerHTML = content;
@@ -130,31 +173,8 @@ window.onload = () => {
   }
 
   renderReceiptCards();
+  handleBurgerMenuLogic();
+
+  setCauldronTextPosition();
+  window.addEventListener("resize", setCauldronTextPosition);
 };
-
-// function handleBurgerMenuLogic() {
-//   const $burger = document.querySelector("#burger-trigger");
-//   const $menu = document.querySelector("#mobile-menu");
-//   const $menuCloser = document.querySelector("#menu-closer");
-
-//   if ($burger && $menu) {
-//     $burger.addEventListener("click", function () {
-//       $menu.classList.toggle("active");
-//       $menuCloser.setAttribute("aria-hidden", "false");
-//       lockScroll();
-//     });
-
-//     const closeMenu = () => {
-//       $menuCloser.setAttribute("aria-hidden", "true");
-//       $burger.classList.remove("active");
-//       $menu.classList.remove("active");
-//       lockScroll(false);
-//     };
-
-//     $menuCloser.addEventListener("click", closeMenu);
-
-//     $menu.querySelectorAll("a").forEach((link) => {
-//       link.addEventListener("click", closeMenu);
-//     });
-//   }
-// }

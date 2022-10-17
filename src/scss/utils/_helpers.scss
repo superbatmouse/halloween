@@ -91,12 +91,18 @@
 
 @include media("md", "min") {
     .show-for-md {
-        display: none;
+        display: none !important;
+    }
+}
+
+@include media("sm", "min") {
+    .show-for-sm {
+        display: none !important;
     }
 }
 
 @include media("md") {
     .hide-for-md {
-        display: none;
+        display: none !important;
     }
 }

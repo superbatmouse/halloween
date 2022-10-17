@@ -28,10 +28,13 @@
 
     // Переменные-хелперы
     --header-top-shift: #{rem(64)};
-    --from-header-top-shift: calc(var(--header-top-shift) + #{rem(18)} * 1.2);
+    --header-content-height: calc(#{rem(18)} * 1.2);
+    --from-header-top-shift: calc(
+        var(--header-top-shift) + var(--header-content-height)
+    );
 
     @include media("md") {
-        --h1-fs: #{rem(72)};
+        --h1-fs: #{rem(80)};
         --h2-fs: #{rem(36)};
         --h3-fs: #{rem(24)};
         --text-fs: #{rem(16)};
@@ -42,5 +45,8 @@
         --h1-fs: #{rem(52)};
         --h2-fs: #{rem(22)};
         --h3-fs: #{rem(18)};
+
+        --header-content-height: #{rem(18)};
+        --header-top-shift: #{rem(36)};
     }
 }
