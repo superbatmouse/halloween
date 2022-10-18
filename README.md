@@ -1,4 +1,4 @@
-[Деплой](https://lefhl.github.io/halloween/receipt#1), [макет](https://www.figma.com/file/C5DajjnIeP4ppVyPFMKqT5/VR-Halloween?node-id=100%3A572)
+[Деплой](https://lefhl.github.io/halloween), [макет](https://www.figma.com/file/C5DajjnIeP4ppVyPFMKqT5/VR-Halloween?node-id=100%3A572)
 
 ## Установка и сборка проекта
 
