@@ -21,9 +21,6 @@
         display: block;
         text-align: center;
     }
-
-    @include media("md") {
-    }
 }
 
 .scroll {
@@ -55,5 +52,12 @@
         bottom: rem(20);
         right: 0;
         transform: translateX(205px);
+    }
+
+    @include media("md") {
+        &__spoon {
+            width: rem(320);
+            transform: translateX(70px);
+        }
     }
 }

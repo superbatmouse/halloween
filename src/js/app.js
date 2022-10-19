@@ -84,20 +84,20 @@ function setPageData(data) {
   const description = document.querySelector("#receipt-description");
 
   image.setAttribute("src", data.image);
-  title.textContent = data.title;
-  author.textContent = data.author;
+  title.innerHTML = data.title;
+  author.innerHTML = data.author;
   author.href = data.authorLink;
-  description.textContent = data.description;
+  description.innerHTML = data.description;
   ingredients.innerHTML = "";
   steps.innerHTML = "";
   data.ingredients.forEach((ingredient) => {
     const li = document.createElement("li");
-    li.textContent = ingredient;
+    li.innerHTML = ingredient;
     ingredients.appendChild(li);
   });
   data.steps.forEach((step) => {
     const li = document.createElement("li");
-    li.textContent = step;
+    li.innerHTML = step;
     steps.appendChild(li);
   });
 }

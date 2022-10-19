@@ -14,7 +14,7 @@
 export default [
   {
     id: 1,
-    title: "Печенье-картошка в виде пауков",
+    title: "Печенье-картошка в&nbsp;виде пауков",
     image: "./images/mock/receipt-big.webp",
     author: "NIMBUS2000",
     authorLink: "https://vk.com",
