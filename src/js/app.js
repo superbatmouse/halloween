@@ -1,5 +1,5 @@
 import "../scss/style.scss";
-import receipts from "./receipts";
+import { actualReceipts } from "./receipts";
 
 function lockScroll(needToLock = true) {
   if (needToLock) {
@@ -16,7 +16,7 @@ function lockScroll(needToLock = true) {
 }
 
 function loadReceipt(hash) {
-  const receipt = receipts.find(
+  const receipt = actualReceipts.find(
     (item) => item.id === Number(hash.replace("#", ""))
   );
 
@@ -106,7 +106,7 @@ function renderReceiptCards() {
   const receiptItems = document.querySelector("#receipt-items");
   if (!receiptItems) return;
   const items = [];
-  receipts.forEach((receipt) => {
+  actualReceipts.forEach((receipt) => {
     const content = `
     <div class="receipt__image">
       <img src="${receipt.image}" alt="Фото рецепта">

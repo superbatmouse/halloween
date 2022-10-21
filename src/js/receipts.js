@@ -11,7 +11,7 @@
  * 6. Если будет что-то непонятно при заполнении, можно написать мне в телеграм - @lefhl
  */
 
-export default [
+export const actualReceipts = [
   {
     id: 1,
     title: "Печенье-картошка в&nbsp;виде пауков",
@@ -114,3 +114,5 @@ export default [
     ],
   },
 ];
+
+export const previousReceipts = [];
