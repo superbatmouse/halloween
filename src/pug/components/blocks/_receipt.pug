@@ -1,8 +1,0 @@
-mixin receipt(data)
-  article.receipt
-    .receipt__image
-      img(src=data.img, alt="Фото рецепта")
-    .receipt__content
-      p.receipt__category= data.category
-      p.receipt__name= data.name
-    a(href=data.link title=`Перейти на страницу рецепта: ${data.name}`).receipt__link

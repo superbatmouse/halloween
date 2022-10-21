@@ -1,0 +1,34 @@
+include components/blocks/_back-arrow
+
+doctype html
+html.no-js(lang='ru')
+  include components/service/_head
+  body.body.transition-lock
+    main.recipe-page
+      include components/common/_header
+      .wrapper.recipe-page__content
+        .recipe-page__arrow
+          +back-arrow
+        .recipe-page__receipt#recipe.hidden
+          .recipe-page__main-info
+            .recipe-page__image-container
+              img(src="", alt="")#recipe-image.recipe-page__image
+            .recipe-page__info
+              div
+                h2#recipe-title.recipe-page__title
+                p.recipe-page__author
+                  | Автор_ка рецепта:&nbsp;
+                  a(href="" target="_blank")#recipe-author
+                p.recipe-page__year 2022
+                p.recipe-page__description#recipe-description
+                a(href="#").button.recipe-page__button Перейти к голосованию
+          .recipe-page__details
+            div
+              h3.recipe-page__subtitle Ингредиенты
+              ul#recipe-ingredients.list.list--unordered
+            div
+              h3.recipe-page__subtitle Инструкции
+              ol#recipe-steps.list.list--ordered
+        h2#recipe-not-found.hidden Рецепт не найден
+        include components/common/_preview
+      include components/common/_footer

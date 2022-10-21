@@ -1,0 +1,8 @@
+mixin recipe(data)
+  article.recipe
+    .recipe__image
+      img(src=data.img, alt="Фото рецепта")
+    .recipe__content
+      p.recipe__category= data.category
+      p.recipe__name= data.name
+    a(href=data.link title=`Перейти на страницу рецепта: ${data.name}`).recipe__link

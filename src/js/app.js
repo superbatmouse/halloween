@@ -1,5 +1,5 @@
 import "../scss/style.scss";
-import { actualReceipts } from "./receipts";
+import { actualRecipes } from "./recipes";
 
 function lockScroll(needToLock = true) {
   if (needToLock) {
@@ -16,13 +16,13 @@ function lockScroll(needToLock = true) {
 }
 
 function loadReceipt(hash) {
-  const receipt = actualReceipts.find(
+  const recipe = actualRecipes.find(
     (item) => item.id === Number(hash.replace("#", ""))
   );
 
-  const warnText = document.querySelector("#receipt-not-found");
-  const receiptHTML = document.querySelector("#receipt");
-  if (!receipt) {
+  const warnText = document.querySelector("#recipe-not-found");
+  const receiptHTML = document.querySelector("#recipe");
+  if (!recipe) {
     warnText.classList.remove("hidden");
     receiptHTML.classList.add("hidden");
     return;
@@ -31,7 +31,7 @@ function loadReceipt(hash) {
   warnText.classList.add("hidden");
   receiptHTML.classList.remove("hidden");
 
-  setPageData(receipt);
+  setPageData(recipe);
 }
 
 function setCauldronTextPosition() {
@@ -76,12 +76,12 @@ function handleBurgerMenuLogic() {
   }
 }
 function setPageData(data) {
-  const image = document.querySelector("#receipt-image");
-  const title = document.querySelector("#receipt-title");
-  const author = document.querySelector("#receipt-author");
-  const ingredients = document.querySelector("#receipt-ingredients");
-  const steps = document.querySelector("#receipt-steps");
-  const description = document.querySelector("#receipt-description");
+  const image = document.querySelector("#recipe-image");
+  const title = document.querySelector("#recipe-title");
+  const author = document.querySelector("#recipe-author");
+  const ingredients = document.querySelector("#recipe-ingredients");
+  const steps = document.querySelector("#recipe-steps");
+  const description = document.querySelector("#recipe-description");
 
   image.setAttribute("src", data.image);
   title.innerHTML = data.title;
@@ -103,22 +103,22 @@ function setPageData(data) {
 }
 
 function renderReceiptCards() {
-  const receiptItems = document.querySelector("#receipt-items");
+  const receiptItems = document.querySelector("#recipe-items");
   if (!receiptItems) return;
   const items = [];
-  actualReceipts.forEach((receipt) => {
+  actualRecipes.forEach((recipe) => {
     const content = `
-    <div class="receipt__image">
-      <img src="${receipt.image}" alt="Фото рецепта">
+    <div class="recipe__image">
+      <img src="${recipe.image}" alt="Фото рецепта">
     </div>
-    <div class="receipt__content">
-        <p class="receipt__category">${receipt.category}</p>
-        <p class="receipt__name">${receipt.title}</p>
-        <a href="/receipt.html#${receipt.id}" class="receipt__link" title="Перейти на страницу рецепта: ${receipt.title}"></a>
+    <div class="recipe__content">
+        <p class="recipe__category">${recipe.category}</p>
+        <p class="recipe__name">${recipe.title}</p>
+        <a href="/recipe.html#${recipe.id}" class="recipe__link" title="Перейти на страницу рецепта: ${recipe.title}"></a>
     </div>
     `;
     const template = document.createElement("article");
-    template.classList = "receipt";
+    template.classList = "recipe";
     template.innerHTML = content;
     items.push(template);
   });
@@ -162,7 +162,7 @@ window.onload = () => {
   animateItems(".observed");
 
   const { hash, pathname } = window.location;
-  if (pathname.includes("/receipt")) {
+  if (pathname.includes("/recipe")) {
     loadReceipt(hash);
 
     window.addEventListener("hashchange", (event) => {

@@ -11,11 +11,11 @@
  * 6. Если будет что-то непонятно при заполнении, можно написать мне в телеграм - @lefhl
  */
 
-export const actualReceipts = [
+export const actualRecipes = [
   {
     id: 1,
     title: "Печенье-картошка в&nbsp;виде пауков",
-    image: "./images/mock/receipt-big.webp",
+    image: "./images/mock/recipe-big.webp",
     author: "NIMBUS2000",
     authorLink: "https://vk.com",
     description:
@@ -53,7 +53,7 @@ export const actualReceipts = [
   {
     id: 3,
     title: "Печенье-картошка в виде пауков",
-    image: "./images/mock/receipt-big.webp",
+    image: "./images/mock/recipe-big.webp",
     author: "Just Noname",
     authorLink: "",
     description: "",
@@ -74,7 +74,7 @@ export const actualReceipts = [
   {
     id: 4,
     title: "Печенье-картошка в виде пауков",
-    image: "./images/mock/receipt-big.webp",
+    image: "./images/mock/recipe-big.webp",
     author: "Just Noname",
     authorLink: "",
     description: "",
@@ -95,7 +95,7 @@ export const actualReceipts = [
   {
     id: 5,
     title: "Печенье-картошка в виде пауков",
-    image: "./images/mock/receipt-big.webp",
+    image: "./images/mock/recipe-big.webp",
     author: "Just Noname",
     authorLink: "",
     description: "",
@@ -115,4 +115,4 @@ export const actualReceipts = [
   },
 ];
 
-export const previousReceipts = [];
+export const previousRecipes = [];
