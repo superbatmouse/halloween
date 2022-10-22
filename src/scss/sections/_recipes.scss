@@ -41,6 +41,9 @@
             gap: rem(12);
             margin-bottom: rem(36);
         }
+        &__title {
+            text-shadow: 2px 1px 0px var(--dark-purple-color);
+        }
     }
 
     @include media(500) {

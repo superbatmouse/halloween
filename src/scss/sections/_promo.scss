@@ -78,6 +78,11 @@
     }
 
     @include media("sm") {
+        &__title {
+            &.reached {
+                text-shadow: 1px -2px 0px var(--dark-purple-color);
+            }
+        }
         &__content {
             padding-top: calc(var(--from-header-top-shift) + #{rem(46)});
             min-height: calc(100vh + 140px);

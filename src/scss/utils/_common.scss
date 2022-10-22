@@ -101,3 +101,7 @@ h4 {
     font-family: "Merriweather", serif;
     font-size: var(--text-fs);
 }
+
+@include media("sm") {
+    text-shadow: 2px 1px 0px var(--dark-purple-color);
+}
