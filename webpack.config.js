@@ -108,6 +108,7 @@ module.exports = function (_, argv) {
               loader: "css-loader",
               options: {
                 sourceMap: false,
+                url: false,
               },
             },
             {
@@ -161,7 +162,7 @@ module.exports = function (_, argv) {
           {
             test: /\.(jpe?g|png)/,
             options: {
-              quality: 90,
+              quality: 100,
             },
           },
         ],

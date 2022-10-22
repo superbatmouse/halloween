@@ -36,7 +36,6 @@
 
     &__participant {
         color: rgba(#dfdcd3, 0.7);
-        font-size: var(--small-text-fs);
         & + & {
             margin-top: 1em;
         }

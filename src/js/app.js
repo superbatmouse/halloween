@@ -36,8 +36,9 @@ function loadReceipt(hash) {
 
 function setCauldronTextPosition() {
   const text = document.querySelector(".promo__text");
-  if (window.matchMedia("(min-width: 1024px)").matches) {
+  if (window.matchMedia("(min-width: 766.98px)").matches) {
     text.style = "";
+    setPromoMobileHeight(false);
     return;
   }
   const cauldron = document.querySelector(".cauldron-wrapper");
@@ -47,28 +48,40 @@ function setCauldronTextPosition() {
     cRect.top + window.pageYOffset + cRect.height / 2 - tRect.height / 2 + "px";
   text.style.maxWidth = cRect.width - 80 + "px";
   text.classList.add("promo__text--visible");
+  setPromoMobileHeight();
+}
+
+function setPromoMobileHeight(isMobile = true) {
+  const cauldron = document.querySelector("#cauldron");
+  const promo = document.querySelector(".promo__content");
+  const { height } = cauldron.getBoundingClientRect();
+  if (isMobile) {
+    promo.style.height = height + 90 + "px";
+    return;
+  }
+  promo.style.removeProperty("height");
 }
 
 function handleBurgerMenuLogic() {
   const $burger = document.querySelector("#burger-trigger");
   const $menu = document.querySelector("#mobile-menu");
-  // const $menuCloser = document.querySelector("#menu-closer");
+  const $menuCloser = document.querySelector("#menu-closer");
 
   if ($burger && $menu) {
     $burger.addEventListener("click", function () {
       $menu.classList.toggle("active");
-      // $menuCloser.setAttribute("aria-hidden", "false");
+      $menuCloser.setAttribute("aria-hidden", "false");
       lockScroll();
     });
 
     const closeMenu = () => {
-      // $menuCloser.setAttribute("aria-hidden", "true");
+      $menuCloser.setAttribute("aria-hidden", "true");
       $burger.classList.remove("active");
       $menu.classList.remove("active");
       lockScroll(false);
     };
 
-    // $menuCloser.addEventListener("click", closeMenu);
+    $menuCloser.addEventListener("click", closeMenu);
 
     $menu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", closeMenu);
@@ -108,13 +121,15 @@ function renderReceiptCards() {
   const items = [];
   actualRecipes.forEach((recipe) => {
     const content = `
-    <div class="recipe__image">
-      <img src="${recipe.image}" alt="Фото рецепта">
-    </div>
-    <div class="recipe__content">
+    <a href="/recipe.html#${recipe.id}" class="recipe__link" title="Перейти на страницу рецепта: ${recipe.title}"></a>
+    <div class="recipe__wrapper">
+      <div class="recipe__image">
+        <img src="${recipe.image}" alt="Фото рецепта">
+      </div>
+      <div class="recipe__content">
         <p class="recipe__category">${recipe.category}</p>
         <p class="recipe__name">${recipe.title}</p>
-        <a href="/recipe.html#${recipe.id}" class="recipe__link" title="Перейти на страницу рецепта: ${recipe.title}"></a>
+      </div>
     </div>
     `;
     const template = document.createElement("article");

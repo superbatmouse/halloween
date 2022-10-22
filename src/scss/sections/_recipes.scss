@@ -20,6 +20,12 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: rem(20);
+        margin-bottom: rem(92);
+    }
+
+    &__link {
+        margin-inline: auto;
+        display: flex;
     }
 
     @include media("md") {
@@ -33,6 +39,7 @@
         margin-bottom: rem(80);
         &__items {
             gap: rem(12);
+            margin-bottom: rem(36);
         }
     }
 

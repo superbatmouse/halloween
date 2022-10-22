@@ -1,0 +1,70 @@
+.scroll {
+    max-width: rem(590);
+    margin-inline: auto;
+    background-image: url(./../images/scroll.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-block: rem(150) rem(190);
+    color: var(--black-color);
+    padding-inline: rem(64);
+    position: relative;
+
+    &__title {
+        text-align: center;
+        margin-bottom: rem(56);
+        text-transform: uppercase;
+        color: var(--black-color);
+        text-shadow: none;
+    }
+
+    &__rule {
+        font-size: rem(24);
+        font-style: italic;
+        font-family: Merriweather, serif;
+        & + & {
+            margin-top: rem(8);
+        }
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    &__spoon {
+        position: absolute;
+        bottom: rem(20);
+        right: 0;
+        transform: translateX(#{rem(205)});
+    }
+
+    @include media("md") {
+        padding-block: rem(96) rem(119);
+        max-width: rem(430);
+
+        &__title {
+            font-size: rem(24);
+            margin-bottom: rem(24);
+        }
+
+        &__rule {
+            font-size: rem(18);
+        }
+
+        &__spoon {
+            width: rem(296);
+            transform: translateX(#{rem(130)});
+        }
+    }
+
+    @include media("sm") {
+        max-width: rem(242);
+        padding: rem(46) rem(26) rem(61);
+        // background-position: center;
+        &__title {
+            font-size: rem(18);
+            margin-bottom: rem(20);
+        }
+        &__rule {
+            font-size: rem(12);
+        }
+    }
+}

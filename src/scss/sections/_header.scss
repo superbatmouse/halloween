@@ -18,20 +18,14 @@
         &__nav {
             overflow-y: auto;
             flex-direction: column;
-            visibility: hidden;
             justify-content: flex-start;
             position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            // height: 100vh;
+            @include inset;
             background-color: var(--black-color);
             padding: rem(56) rem(59);
             transform: translateX(100%);
             transition: transform 0.3s linear;
             &.active {
-                visibility: visible;
                 transform: translateX(0);
             }
         }
@@ -64,6 +58,12 @@
         &__nav-vr-link {
             padding-top: rem(20);
             margin-top: auto;
+        }
+
+        &__cross {
+            position: absolute;
+            left: rem(20);
+            top: rem(24);
         }
     }
 }

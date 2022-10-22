@@ -10,7 +10,8 @@ section.promo.wrapper
       a(href="#").button.hide-for-md Перейти к рецептам
   .promo__cauldron
     +hi-label.promo__hi-label
-    span.hide-for-md
-      include ../../../images/cauldron.svg
-    span.show-for-md
-      include ../../../images/cauldron-mobile.svg
+    span
+      //- include ../../../images/cauldron.svg
+    //- .hide-for-md
+    span.show-for-sm
+      include ../../../images/cauldron-sm.svg

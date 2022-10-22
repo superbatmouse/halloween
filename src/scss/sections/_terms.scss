@@ -21,43 +21,21 @@
         display: block;
         text-align: center;
     }
-}
-
-.scroll {
-    max-width: rem(590);
-    margin-inline: auto;
-    background-image: url(./../images/scroll.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding-block: rem(150) rem(190);
-    color: var(--black-color);
-    padding-inline: rem(64);
-    position: relative;
-
-    &__title {
-        text-align: center;
-        margin-bottom: rem(56);
-        text-transform: uppercase;
-    }
-
-    &__rule {
-        font-size: rem(24);
-        & + & {
-            margin-top: rem(8);
-        }
-    }
-
-    &__spoon {
-        position: absolute;
-        bottom: rem(20);
-        right: 0;
-        transform: translateX(205px);
-    }
 
     @include media("md") {
+        padding-bottom: rem(144);
+    }
+
+    @include media("sm") {
+        padding-bottom: rem(80);
+        &__header {
+            margin-bottom: rem(20);
+        }
+
         &__spoon {
-            width: rem(320);
-            transform: translateX(70px);
+            margin-bottom: rem(36);
+            display: block;
+            margin-inline: auto;
         }
     }
 }

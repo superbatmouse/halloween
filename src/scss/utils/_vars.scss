@@ -1,7 +1,8 @@
 :root {
-    // Обёртка контента
+    // Сетка
     --wrapper-gap: #{rem(40)};
     --wrapper-width: #{rem(1240)};
+    --gap: #{rem(20)};
 
     // Размеры шрифтов
     --h1-fs: #{rem(104)};
@@ -48,5 +49,7 @@
 
         --header-content-height: #{rem(18)};
         --header-top-shift: #{rem(36)};
+
+        --gap: #{rem(12)};
     }
 }

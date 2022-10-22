@@ -100,6 +100,11 @@
         display: none !important;
     }
 }
+@include media("sm") {
+    .hide-for-sm {
+        display: none !important;
+    }
+}
 
 @include media("md") {
     .hide-for-md {
