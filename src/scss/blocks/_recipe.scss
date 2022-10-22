@@ -1,5 +1,7 @@
 .recipe {
     position: relative;
+    --allowed-line-count: 2;
+    --shadow-hover: 0px 0px 30px var(--orange-color);
 
     &__wrapper {
         border-radius: rem(20);
@@ -15,17 +17,16 @@
     @media (hover: hover) {
         &:hover {
             .recipe__wrapper {
-                box-shadow: 0px 0px 30px var(--orange-color);
-
-                img {
-                    transform: scale(1.05);
-                }
+                box-shadow: var(--shadow-hover);
+            }
+            .recipe__image img {
+                transform: scale(1.05);
             }
         }
 
         a:active + .recipe__wrapper {
             box-shadow: none;
-            img {
+            .recipe__image img {
                 transform: none;
             }
         }
@@ -55,6 +56,13 @@
 
     &__content {
         padding: rem(17.5) rem(16) rem(29.5);
+
+        &--winner {
+            --allowed-line-count: 3;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: rem(10);
+        }
     }
 
     &__category {
@@ -68,8 +76,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 2; /* number of lines to show */
-        line-clamp: 2;
+        -webkit-line-clamp: var(--allowed-line-count);
+        line-clamp: var(--allowed-line-count);
         -webkit-box-orient: vertical;
     }
 
@@ -78,6 +86,22 @@
         @include inset;
         display: block;
         z-index: 1;
+    }
+
+    @include media("md") {
+        --shadow-hover: 0px 0px 15px var(--orange-color);
+
+        &__wrapper {
+            box-shadow: 6px 4px 12px rgba(210, 82, 27, 0.7);
+        }
+
+        &__content {
+            &--winner {
+                img {
+                    width: rem(110);
+                }
+            }
+        }
     }
 
     @include media("sm") {
@@ -99,6 +123,20 @@
 
         &__content {
             padding: rem(4) rem(8) rem(16);
+            &--winner {
+                padding: rem(16) rem(16) rem(32);
+                img {
+                    width: rem(90);
+                }
+            }
+
+            .recipe__category {
+                font-size: rem(14);
+            }
+
+            .recipe__name {
+                font-size: rem(16);
+            }
         }
     }
 }

@@ -1,6 +1,14 @@
+import "swiper/css";
 import "../scss/style.scss";
-import { actualRecipes } from "./recipes";
+import { actualRecipes, previousRecipes } from "./recipes";
+import Swiper, { Pagination } from "swiper";
 
+let sliders = null;
+
+/**
+ * Блочим скролл на странице, добавляем падинг, чтобы страница не дёргалась при исчезновении скроллбара
+ * @param {boolean} needToLock
+ */
 function lockScroll(needToLock = true) {
   if (needToLock) {
     const scrollbarWidth =
@@ -15,9 +23,23 @@ function lockScroll(needToLock = true) {
   document.body.classList[needToLock ? "add" : "remove"]("scroll-lock");
 }
 
+/**
+ * Приводим объект с рецептами прошлых лет к плоскому массиву, объединяем с массивом актуальных рецептов
+ */
+function getAllRecipes() {
+  const oldRecipes = Object.values(previousRecipes).flat();
+  return oldRecipes.concat(actualRecipes);
+}
+
+/**
+ * Ищем нужный рецепт по хэшу в поисковой строке.
+ * Если находим — запускаем @function setPageData, которая подставит нужные данные на странице рецепта
+ * Если нет — выводим сообщение о том, что рецепт не найден
+ * @param {string | number} hash
+ */
 function loadReceipt(hash) {
-  const recipe = actualRecipes.find(
-    (item) => item.id === Number(hash.replace("#", ""))
+  const recipe = getAllRecipes().find(
+    (item) => item.id == hash.replace("#", "")
   );
 
   const warnText = document.querySelector("#recipe-not-found");
@@ -34,8 +56,96 @@ function loadReceipt(hash) {
   setPageData(recipe);
 }
 
+function renderOldRecipesPage() {
+  const recipes = Object.entries(previousRecipes);
+  recipes.sort((A, B) => (Number(A[0]) < Number(B[0]) ? 1 : -1));
+  recipes.forEach(([year, items]) => {
+    const winners = [];
+    const other = [];
+    items.forEach((item) => {
+      item.place ? winners.push(item) : other.push(item);
+    });
+    renderYearRecipesSection({ year, winners, other });
+  });
+}
+
+function renderYearRecipesSection({ year, winners, other }) {
+  const HTMLRoot = document.querySelector(".past-competition");
+
+  const root = document.createElement("section");
+  root.classList = "recipes-by-year";
+
+  const winnersElement = winners.map((item) => {
+    item.classes = "swiper-slide";
+    return getReceiptElement(item);
+  });
+  const slider = document.createElement("section");
+  slider.classList = "swiper recipes-by-year__slider";
+  const sliderWrapper = document.createElement("div");
+  sliderWrapper.classList = "swiper-wrapper";
+  sliderWrapper.append(...winnersElement);
+  slider.append(sliderWrapper);
+  slider.insertAdjacentHTML(
+    "beforeend",
+    '<div class="swiper-pagination"></div>'
+  );
+
+  const otherElements = other.map(getReceiptElement);
+  const otherElementSection = document.createElement("section");
+  otherElementSection.classList = "recipes-by-year__items";
+  otherElementSection.append(...otherElements);
+
+  root.innerHTML = `
+    <h2 class="recipes-by-year__title">Рецепты ${year}</h2>
+    <h3 class="recipes-by-year__subtitle show-for-sm">Рецепты-Победители</h3>
+  `;
+
+  root.insertAdjacentElement("beforeend", slider);
+  root.insertAdjacentElement("beforeend", otherElementSection);
+  HTMLRoot.insertAdjacentElement("beforeend", root);
+}
+
+function getReceiptWinnerElement() {}
+
+/**
+ *
+ * @param {*} recipe
+ * @returns {HTMLElement}
+ */
+function getReceiptElement({ place, classes, ...recipe }) {
+  const root = document.createElement("article");
+  root.classList = `recipe ${classes}`;
+  const image = place ? `<img src="./images/medals/${place}.svg">` : "";
+  root.innerHTML = `
+  <a href="/recipe.html#${
+    recipe.id
+  }" class="recipe__link" title="Перейти на страницу рецепта: ${
+    recipe.title
+  }"></a>
+  <div class="recipe__wrapper">
+    <div class="recipe__image">
+      <img src="${recipe.image}" alt="Фото рецепта">
+    </div>
+    <div class="recipe__content ${place ? "recipe__content--winner" : ""}">
+      <div>
+        <p class="recipe__category">${recipe.category}</p>
+        <p class="recipe__name">${recipe.title}</p>
+      </div>
+      ${image}
+    </div>
+  </div>
+  `;
+  return root;
+}
+
+/**
+ * Функция для установления текста на главной четко по середине котла для мобильных экранов.
+ * Заодно устанавливается высота для всей секции, чтобы у обёртки была зависимость от высоты котла,
+ * который расположен абсолютом, вызывая @function setPromoMobileHeight
+ */
 function setCauldronTextPosition() {
   const text = document.querySelector(".promo__text");
+  if (!text) return;
   if (window.matchMedia("(min-width: 766.98px)").matches) {
     text.style = "";
     setPromoMobileHeight(false);
@@ -62,6 +172,9 @@ function setPromoMobileHeight(isMobile = true) {
   promo.style.removeProperty("height");
 }
 
+/**
+ * Обрабатываем логику открытия-закрытия мобильного меню в шапке
+ */
 function handleBurgerMenuLogic() {
   const $burger = document.querySelector("#burger-trigger");
   const $menu = document.querySelector("#mobile-menu");
@@ -88,6 +201,11 @@ function handleBurgerMenuLogic() {
     });
   }
 }
+
+/**
+ * Подставляем нужные данные на странице рецепта в соответствующие поля
+ * @param {} data
+ */
 function setPageData(data) {
   const image = document.querySelector("#recipe-image");
   const title = document.querySelector("#recipe-title");
@@ -115,31 +233,23 @@ function setPageData(data) {
   });
 }
 
+/**
+ * Отрисовываем массив с рецептами на главной странице на основе данных из файла recipes.js с актуальными рецптами
+ *
+ */
 function renderReceiptCards() {
   const receiptItems = document.querySelector("#recipe-items");
   if (!receiptItems) return;
-  const items = [];
-  actualRecipes.forEach((recipe) => {
-    const content = `
-    <a href="/recipe.html#${recipe.id}" class="recipe__link" title="Перейти на страницу рецепта: ${recipe.title}"></a>
-    <div class="recipe__wrapper">
-      <div class="recipe__image">
-        <img src="${recipe.image}" alt="Фото рецепта">
-      </div>
-      <div class="recipe__content">
-        <p class="recipe__category">${recipe.category}</p>
-        <p class="recipe__name">${recipe.title}</p>
-      </div>
-    </div>
-    `;
-    const template = document.createElement("article");
-    template.classList = "recipe";
-    template.innerHTML = content;
-    items.push(template);
-  });
+  const items = actualRecipes.map(getReceiptElement);
   receiptItems.append(...items);
 }
 
+/**
+ * Функция-наблюдатель. По достижении определённых HTML-элементов мы присваиваем им заданные классы или
+ * класс по умолчанию reached, для анимирования элементов при скролле
+ * @param {string} classToWatch
+ * @param {IntersectionObserverInit} customSettings
+ */
 function animateItems(classToWatch, customSettings = null) {
   let options = customSettings ?? {
     root: null,
@@ -187,9 +297,43 @@ window.onload = () => {
     });
   }
 
+  if (pathname.includes("past-competition")) {
+    renderOldRecipesPage();
+  }
+
   renderReceiptCards();
   handleBurgerMenuLogic();
 
   setCauldronTextPosition();
   window.addEventListener("resize", setCauldronTextPosition);
+
+  setTimeout(() => {
+    const media = window.matchMedia("(max-width: 1023.98px)");
+
+    if (media.matches) {
+      createSliderForMobile(media);
+    }
+    media.addEventListener("change", createSliderForMobile);
+  });
 };
+
+function createSliderForMobile(e) {
+  if (e && e.matches) {
+    sliders = new Swiper(".swiper", {
+      modules: [Pagination],
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      spaceBetween: 20,
+      slidesPerView: 1,
+      breakpoints: {
+        420: {
+          slidesPerView: "auto",
+        },
+      },
+    });
+  } else if (sliders) {
+    sliders.forEach((slider) => slider.destroy(true, true));
+  }
+}

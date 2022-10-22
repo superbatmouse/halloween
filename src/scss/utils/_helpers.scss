@@ -12,6 +12,11 @@
 
 .scroll-lock {
     overflow: hidden;
+
+    .past-competition__arrow,
+    .recipe-page__arrow {
+        z-index: 0;
+    }
 }
 
 .observed {
