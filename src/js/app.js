@@ -333,7 +333,7 @@ function createSliderForMobile(e) {
         },
       },
     });
-  } else if (sliders) {
+  } else if (sliders && Array.isArray(sliders)) {
     sliders.forEach((slider) => slider.destroy(true, true));
   }
 }

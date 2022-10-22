@@ -20,7 +20,7 @@
     &__rule {
         font-size: rem(24);
         font-style: italic;
-        font-family: Merriweather, serif;
+        font-family: "Merriweather", serif !important;
         & + & {
             margin-top: rem(8);
         }
