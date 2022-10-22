@@ -26,6 +26,7 @@
     @include media("md") {
         font-size: rem(18);
         padding: rem(8.5) rem(15);
+        gap: rem(14);
         img {
             height: rem(38);
         }
@@ -34,6 +35,7 @@
         font-size: rem(14);
         font-weight: normal;
         padding: rem(3.5) rem(10.5);
+        gap: rem(4);
         img {
             height: rem(38);
         }
