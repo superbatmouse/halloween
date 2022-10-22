@@ -128,14 +128,13 @@
                 img {
                     width: rem(90);
                 }
-            }
+                .recipe__category {
+                    font-size: rem(14);
+                }
 
-            .recipe__category {
-                font-size: rem(14);
-            }
-
-            .recipe__name {
-                font-size: rem(16);
+                .recipe__name {
+                    font-size: rem(16);
+                }
             }
         }
     }
