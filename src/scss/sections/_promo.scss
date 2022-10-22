@@ -25,7 +25,7 @@
 
     &__subtitle {
         font-size: rem(32);
-        margin-bottom: 1em;
+        margin-bottom: rem(16);
         line-height: 1.2;
         color: var(--light-orange-color);
     }
@@ -35,6 +35,8 @@
         color: var(--light-orange-color);
         transition: text-shadow 0.5s ease;
         text-shadow: 2px -3px 15px var(--dark-purple-color);
+        line-height: 1.1;
+        margin-bottom: rem(24);
         &.reached {
             text-shadow: 2px -3px 0px var(--dark-purple-color);
         }
@@ -56,16 +58,8 @@
 
     @include media("md") {
         &__content {
-            padding-top: calc(var(--from-header-top-shift) + #{rem(107)});
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            max-width: rem(470);
-            margin-inline: auto;
-        }
-
-        &__content-text {
-            display: contents;
+            padding-top: calc(var(--from-header-top-shift) + #{rem(72)});
+            align-items: flex-start;
         }
 
         &__subtitle {
@@ -77,13 +71,27 @@
             line-height: 1.1;
             margin-bottom: rem(12);
         }
+
+        &__text {
+            margin-bottom: rem(42);
+        }
     }
 
     @include media("sm") {
         &__content {
             padding-top: calc(var(--from-header-top-shift) + #{rem(46)});
             min-height: calc(100vh + 140px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-inline: auto;
+            max-width: rem(470);
         }
+
+        &__content-text {
+            display: contents;
+        }
+
         &__subtitle {
             font-size: rem(18);
             color: #fff;
