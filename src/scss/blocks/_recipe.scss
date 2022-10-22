@@ -77,9 +77,7 @@
         position: absolute;
         @include inset;
         display: block;
-
-        &:active {
-        }
+        z-index: 1;
     }
 
     @include media("sm") {
