@@ -1,4 +1,7 @@
 mixin back-arrow(url = '/')
   a(href=url title="Вернуться назад").back-arrow
-    img(src="./images/arr-left.svg", alt="" aria-hidden="true")
+    span.hide-for-sm
+      include ./../../../images/arr-left.svg
+    span.show-for-sm
+      include ./../../../images/arr-left-2.svg
     | Назад

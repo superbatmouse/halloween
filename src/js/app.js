@@ -213,11 +213,13 @@ function setPageData(data) {
   const ingredients = document.querySelector("#recipe-ingredients");
   const steps = document.querySelector("#recipe-steps");
   const description = document.querySelector("#recipe-description");
+  const year = document.querySelector("#recipe-year");
 
   image.setAttribute("src", data.image);
   title.innerHTML = data.title;
   author.innerHTML = data.author;
   author.href = data.authorLink;
+  year.innerHTML = data.year;
   description.innerHTML = data.description;
   ingredients.innerHTML = "";
   steps.innerHTML = "";

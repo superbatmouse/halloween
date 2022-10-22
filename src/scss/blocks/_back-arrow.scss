@@ -2,14 +2,28 @@
     display: flex;
     align-items: center;
     width: max-content;
-    img {
+    span {
+        display: flex;
+    }
+    svg {
         transition: transform 0.3s ease;
     }
     @media (hover: hover) {
         &:hover {
-            img {
+            svg {
                 transform: translateX(-0.6rem);
             }
+        }
+    }
+
+    @include media("md") {
+        svg {
+            width: rem(32);
+        }
+    }
+    @include media("md") {
+        svg {
+            width: auto;
         }
     }
 }

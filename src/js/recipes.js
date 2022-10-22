@@ -18,6 +18,7 @@ export const actualRecipes = [
     image: "./images/mock/recipe-big.webp",
     author: "NIMBUS2000",
     authorLink: "https://vk.com",
+    year: 2022,
     description:
       "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
     ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
@@ -36,6 +37,7 @@ export const actualRecipes = [
     description: "",
     category: "Закуска",
     authorLink: "",
+    year: 2022,
     ingredients: [
       "Гречка зелёная 1/2 стак",
       "Яблоко 1 шт",
@@ -58,6 +60,7 @@ export const actualRecipes = [
     authorLink: "",
     description: "",
     category: "Десерт",
+    year: 2022,
     ingredients: [
       "Гречка зелёная 1/2 стак",
       "Яблоко 1 шт",
@@ -79,6 +82,7 @@ export const actualRecipes = [
     authorLink: "",
     description: "",
     category: "Десерт",
+    year: 2022,
     ingredients: [
       "Гречка зелёная 1/2 стак",
       "Яблоко 1 шт",
@@ -100,6 +104,7 @@ export const actualRecipes = [
     authorLink: "",
     description: "",
     category: "Десерт",
+    year: 2022,
     ingredients: [
       "Гречка зелёная 1/2 стак",
       "Яблоко 1 шт",
@@ -125,6 +130,7 @@ export const previousRecipes = {
       image: "./images/mock/recipe-big.webp",
       author: "NIMBUS2000",
       authorLink: "https://vk.com",
+      year: 2021,
       description:
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
       ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
@@ -142,6 +148,7 @@ export const previousRecipes = {
       image: "./images/mock/recipe-big.webp",
       author: "NIMBUS2000",
       authorLink: "https://vk.com",
+      year: 2021,
       description:
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
       ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
@@ -159,6 +166,7 @@ export const previousRecipes = {
       image: "./images/mock/recipe-big.webp",
       author: "NIMBUS2000",
       authorLink: "https://vk.com",
+      year: 2021,
       description:
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
       ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
@@ -180,6 +188,7 @@ export const previousRecipes = {
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
       ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
       category: "Закуска",
+      year: 2021,
       steps: [
         "Зелёную гречку помыть и замочить минимумна 2 часа, но лучше на ночь.",
         "Все фрукты моем, нарезаем, предварительно сняв с банана шкурку, а виноград можно оставить без нарезания. Соединяем фрукты, перемешиваем и раскладываем по тарелочкам.",
@@ -192,6 +201,7 @@ export const previousRecipes = {
       image: "./images/mock/recipe-big.webp",
       author: "NIMBUS2000",
       authorLink: "https://vk.com",
+      year: 2021,
       description:
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
       ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
@@ -210,6 +220,7 @@ export const previousRecipes = {
       image: "./images/mock/recipe-big.webp",
       author: "NIMBUS2000",
       authorLink: "https://vk.com",
+      year: 2020,
       description:
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
       ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
@@ -227,6 +238,7 @@ export const previousRecipes = {
       image: "./images/mock/recipe-big.webp",
       author: "NIMBUS2000",
       authorLink: "https://vk.com",
+      year: 2020,
       description:
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
       ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
@@ -244,6 +256,7 @@ export const previousRecipes = {
       image: "./images/mock/recipe-big.webp",
       author: "NIMBUS2000",
       authorLink: "https://vk.com",
+      year: 2020,
       description:
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
       ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
@@ -261,6 +274,7 @@ export const previousRecipes = {
       image: "./images/mock/recipe-big.webp",
       author: "NIMBUS2000",
       authorLink: "https://vk.com",
+      year: 2020,
       description:
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",
       ingredients: ["Гречка зелёная 1/2 стак", "Яблоко 1 шт", "Банан 1 шт"],
@@ -276,6 +290,7 @@ export const previousRecipes = {
       title: "Печенье-картошка в&nbsp;виде пауков",
       image: "./images/mock/recipe-big.webp",
       author: "NIMBUS2000",
+      year: 2020,
       authorLink: "https://vk.com",
       description:
         "Говорят, «тощих» людей легче похитить, но ведь толстяков проще догнать и пальчики у них вкуснее.",

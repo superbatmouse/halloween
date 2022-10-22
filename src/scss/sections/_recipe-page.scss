@@ -107,6 +107,10 @@
     }
 
     @include media("sm") {
+        &__subtitle {
+            text-transform: uppercase;
+            margin-bottom: rem(16);
+        }
         &__arrow {
             top: var(--header-top-shift);
             position: absolute;
