@@ -25,8 +25,13 @@
             padding: rem(56) rem(59);
             transform: translateX(100%);
             transition: transform 0.3s linear;
+            gap: 0;
             &.active {
                 transform: translateX(0);
+            }
+
+            li {
+                width: rem(170);
             }
         }
 
