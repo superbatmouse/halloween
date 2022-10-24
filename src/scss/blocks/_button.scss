@@ -14,6 +14,12 @@
     max-width: rem(387);
     width: 100%;
 
+    &[href=""],
+    &--disabled {
+        background: var(--gray-color);
+        pointer-events: none;
+    }
+
     &--hollow {
         border: rem(3) solid var(--orange-color);
         padding-block: rem(16);
