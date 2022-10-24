@@ -16,6 +16,15 @@
         position: relative;
     }
 
+    &__button {
+        &[href=""] {
+            pointer-events: none;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+    }
+
     &__image {
         box-shadow: 6px 4px 12px rgba(210, 82, 27, 0.7);
         border-radius: rem(20);
