@@ -214,6 +214,7 @@ function setPageData(data) {
   const steps = document.querySelector("#recipe-steps");
   const description = document.querySelector("#recipe-description");
   const year = document.querySelector("#recipe-year");
+  const button = document.querySelector("#recipe-button");
 
   image.setAttribute("src", data.image);
   title.innerHTML = data.title;
@@ -233,6 +234,11 @@ function setPageData(data) {
     li.innerHTML = step;
     steps.appendChild(li);
   });
+
+  const today = new Date();
+  button.classList[today.getFullYear() === data.year ? "remove" : "add"](
+    "hidden"
+  );
 }
 
 /**
