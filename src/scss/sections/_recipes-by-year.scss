@@ -40,6 +40,10 @@
         padding-block: var(--y-padding);
     }
 
+    &__subtitle {
+        text-align: center;
+    }
+
     @include media("md", "min") {
         &__slider {
             overflow: unset;
@@ -92,10 +96,6 @@
 
         &__title {
             margin-bottom: rem(32);
-        }
-
-        &__subtitle {
-            text-align: center;
         }
     }
 

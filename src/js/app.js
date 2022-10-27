@@ -97,7 +97,7 @@ function renderYearRecipesSection({ year, winners, other }) {
 
   root.innerHTML = `
     <h2 class="recipes-by-year__title">Рецепты ${year}</h2>
-    <h3 class="recipes-by-year__subtitle show-for-sm">Рецепты-Победители</h3>
+    <h3 class="recipes-by-year__subtitle">Рецепты-Победители</h3>
   `;
 
   root.insertAdjacentElement("beforeend", slider);

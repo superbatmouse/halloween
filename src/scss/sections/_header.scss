@@ -21,10 +21,15 @@
             justify-content: flex-start;
             position: fixed;
             @include inset;
+            font-family: "Merriawether";
+            font-weight: bold;
+            text-underline-offset: rem(2);
+            letter-spacing: 0.06em;
             background-color: var(--black-color);
-            padding: rem(56) rem(59);
+            padding: rem(96) rem(56) rem(40);
             transform: translateX(100%);
             transition: transform 0.3s linear;
+
             gap: 0;
             &.active {
                 transform: translateX(0);
