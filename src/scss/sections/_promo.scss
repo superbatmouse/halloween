@@ -98,8 +98,9 @@
         }
 
         &__subtitle {
-            font-size: rem(18);
-            color: #fff;
+            font-size: rem(17);
+            margin-bottom: rem(12);
+            color: var(--light-gray);
         }
         &__cauldron {
             background: none;
