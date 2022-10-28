@@ -1,6 +1,5 @@
 .button {
     font-size: var(--text-fs);
-    font-weight: bold;
     padding: rem(19);
     display: inline-flex;
     justify-content: center;
@@ -13,6 +12,12 @@
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
     max-width: rem(387);
     width: 100%;
+
+    &[href=""],
+    &--disabled {
+        background: var(--gray-color);
+        pointer-events: none;
+    }
 
     &--hollow {
         border: rem(3) solid var(--orange-color);

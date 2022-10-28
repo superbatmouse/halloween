@@ -5,7 +5,7 @@ html.no-js(lang='ru')
   include components/service/_head
   body.body.transition-lock
     main.recipe-page
-      include components/common/_header
+      include components/common/_secondary-page-header
       .wrapper.recipe-page__content
         .recipe-page__arrow
           +back-arrow
@@ -23,7 +23,7 @@ html.no-js(lang='ru')
                   span#recipe-year
                   |&nbsp;год
                 p.recipe-page__description#recipe-description
-                a(href="").button.recipe-page__button#recipe-button Перейти к голосованию
+                a(href="https://forms.yandex.ru/cloud/635a38f643f74f05259e4acb/" target="_blank").button.recipe-page__button#recipe-button Перейти к голосованию
           .recipe-page__details
             div
               h3.recipe-page__subtitle Ингредиенты
@@ -33,4 +33,4 @@ html.no-js(lang='ru')
               ol#recipe-steps.list.list--ordered
         h2#recipe-not-found.hidden Рецепт не найден
         include components/common/_preview
-      include components/common/_footer
+      include components/common/_secondary-page-footer
