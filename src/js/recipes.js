@@ -107,7 +107,7 @@ export const actualRecipes = [
     author: "Артём Скворцов",
     authorLink: "",
     description: "Тёплые ароматные булочки с пряным тыквенным муссом создадут приятную осеннюю атмосферу и подарят Хэллоуинское настроение.",
-    category: "Десерт",
+    category: "Выпечка",
     year: 2022,
     ingredients: [
       "Ингредиенты для&nbsp;теста:",
@@ -176,7 +176,7 @@ export const actualRecipes = [
     author: "paleandsweet",
     authorLink: "https://www.instagram.com/paleandsweet/",
     description: "По легенде, передающейся из&nbsp; поколения в поколение, растения чувствуют боль, и&nbsp; , чтобы они не восстали и&nbsp; не начали мстить, веганы в&nbsp; Хэллоуин готовят блюдо, которое отпугнёт и&nbsp; защитит от&nbsp; овоще-монстров.",
-    category: "Закуска",
+    category: "На второе",
     year: 2022,
     ingredients: [
       "Чтобы защититься от&nbsp; разных видов взбунтовавшихся растений, надо приготовить это блюдо из&nbsp; максимального разнообразия этих самых растений, в этом рецепте спрятаны:",
@@ -224,7 +224,7 @@ export const actualRecipes = [
     author: "paleandsweet",
     authorLink: "https://www.instagram.com/paleandsweet/",
     description: "",
-    category: "Закуска",
+    category: "Пицца",
     year: 2022,
     ingredients: [
       "Основа:",
@@ -286,7 +286,7 @@ export const actualRecipes = [
     author: "Маша",
     authorLink: "https://instagram.com/_common_raccoon?igshid=YmMyMTA2M2Y=",
     description: "Кровавые глаза и&nbsp;пальцы ведьм. Жуткие мини-пиццы.",
-    category: "Закуска",
+    category: "Выпечка",
     year: 2022,
     ingredients: [
       "Для теста:",
@@ -330,7 +330,7 @@ export const actualRecipes = [
     author: "Оляшка",
     authorLink: "",
     description: "Вы когда нибудь задумывались, может ли укроп призвать ящера? Как оказалось, может. Поэтому описания вкуса у&nbsp;меня не будет, ведь мой кожаный пирог съел ящер…",
-    category: "Закуска",
+    category: "Выпечка",
     year: 2022,
     ingredients: [
       "1 пачка слоёного теста (400 грамм, бездрожжевое)",
@@ -357,7 +357,7 @@ export const actualRecipes = [
     author: "Даниэлька",
     authorLink: "",
     description: "Довольно сытный гроб на&nbsp;одну персону, можно подавать как дополнение или&nbsp;основу. Если хлеба для вас много, можно сделать гроб без&nbsp;крышки или&nbsp;уменьшить его размер.",
-    category: "Закуска",
+    category: "На второе",
     year: 2022,
     ingredients: [
       "1 буханка хлеба (понадобятся корочки)",
@@ -387,7 +387,7 @@ export const actualRecipes = [
     author: "Варя Платонова",
     authorLink: "https://www.instagram.com/variaplaton/",
     description: "О-о! Рука мертвеца пытается вырваться наружу! Скорее ешь её!",
-    category: "Закуска",
+    category: "Выпечка",
     year: 2022,
     ingredients: [
       "Тесто:",
@@ -420,7 +420,7 @@ export const actualRecipes = [
     author: "Варя Платонова",
     authorLink: "https://www.instagram.com/variaplaton/",
     description: "Ну&nbsp;вот, Скелетон объелся вкусных грибочков-черепочков!",
-    category: "Закуска",
+    category: "На второе",
     year: 2022,
     ingredients: [
       "1 средний кабачок",
