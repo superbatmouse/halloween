@@ -35,7 +35,7 @@ export const actualRecipes = [
     title: "Тако на&nbsp;Хэллоуин",
     image: "./images/recipes/tako-na-halloween.webp",
     author: "Варя Платонова",
-    description: "Этот рецепт рассчитан на 2 тако, его можно адаптировать под себя, к примеру, фрикадельки заменить на фалафель, а граммовки не строги, но от этого обычный тако на Хеллоуин все равно будет жутким... Жутко вкусным!",
+    description: "Этот рецепт рассчитан на 2 тако, его можно адаптировать под&nbsp; себя, к&nbsp;примеру, фрикадельки заменить на&nbsp;фалафель, а&nbsp;граммовки не&nbsp;строги, но&nbsp;от&nbsp;этого обычный тако на&nbsp;Хеллоуин всё равно будет жутким... Жутко вкусным!",
     category: "Закуска",
     authorLink: "https://www.instagram.com/variaplaton",
     year: 2022,
@@ -175,7 +175,7 @@ export const actualRecipes = [
     image: "./images/recipes/farshirovanoe-pugalo.webp",
     author: "paleandsweet",
     authorLink: "https://www.instagram.com/paleandsweet/",
-    description: "По легенде, передающейся из&nbsp; поколения в поколение, растения чувствуют боль, и&nbsp; , чтобы они не восстали и&nbsp; не начали мстить, веганы в&nbsp; Хэллоуин готовят блюдо, которое отпугнёт и&nbsp; защитит от&nbsp; овоще-монстров.",
+    description: "По легенде, передающейся из поколения в поколение, растения чувствуют боль, и, чтобы они не восстали и не начали мстить, веганы в Хэллоуин готовят блюдо, которое отпугнёт и&nbsp;защитит от&nbsp;овоще-монстров.",
     category: "На второе",
     year: 2022,
     ingredients: [
@@ -196,11 +196,11 @@ export const actualRecipes = [
   },
   {
     id: 7,
-    title: "«Они вышли покурить и&nbsp; не вернулись»",
+    title: "«Они вышли покурить и&nbsp;не&nbsp;вернулись»",
     image: "./images/recipes/vishly-pukurit.webp",
     author: "paleandsweet",
     authorLink: "https://www.instagram.com/paleandsweet/",
-    description: "Накануне дня всех святых, компания подростков вышла покурить на балкон и&nbsp; с&nbsp; тех пор их никто не видел. От&nbsp; них остались только недокуренные сигареты…",
+    description: "Накануне дня всех святых, компания подростков вышла покурить на&nbsp;балкон и&nbsp;с&nbsp;тех&nbsp;пор их&nbsp;никто не&nbsp; видел. От них остались только недокуренные сигареты…",
     category: "Десерт",
     year: 2022,
     ingredients: [
@@ -329,7 +329,7 @@ export const actualRecipes = [
     image: "./images/recipes/pirog-iz-kozhi-cheloveka.webp",
     author: "Оляшка",
     authorLink: "",
-    description: "Вы когда нибудь задумывались, может ли укроп призвать ящера? Как оказалось, может. Поэтому описания вкуса у&nbsp;меня не будет, ведь мой кожаный пирог съел ящер…",
+    description: "Вы когда нибудь задумывались, может ли укроп призвать ящера? Как&nbsp;оказалось, может. Поэтому описания вкуса у&nbsp;меня не&nbsp;будет, ведь&nbsp;мой&nbsp;кожаный пирог съел ящер…",
     category: "Выпечка",
     year: 2022,
     ingredients: [
@@ -541,7 +541,7 @@ export const previousRecipes = {
   2021: [
     {
       id: "2021-1",
-      title: "Брауни с привидениями",
+      title: "Брауни с&nbsp;привидениями",
       image: "./images/recipes/2021/brauni-prizrak-1-place.webp",
       author: "Евгения",
       authorLink: "https://www.instagram.com/zhenyaveganfood/",
@@ -595,7 +595,7 @@ export const previousRecipes = {
     },
     {
       id: "2021-3",
-      title: "Торт бисквитный «три шоколада»",
+      title: "Торт бисквитный «три&nbsp;шоколада»",
       image: "./images/recipes/2021/tort-bisquit-3-chokolate-3-place.webp",
       author: "m.v.pastry",
       authorLink: "https://www.instagram.com/m.v.pastry/",
@@ -666,7 +666,7 @@ export const previousRecipes = {
   2020: [
     {
       id: "2020-1",
-      title: "Пицца «Мёртвая голова»",
+      title: "Пицца «Мёртвая&nbsp;голова»",
       image: "./images/recipes/2020/pizza-mertvaya-golova.webp",
       author: "Юлия Амелина",
       authorLink: "https://och-vkusno.com/vtorye-blyuda/picca-myortvaya-golova-na-xellouin/",
